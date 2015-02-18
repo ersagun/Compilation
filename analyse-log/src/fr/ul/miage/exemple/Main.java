@@ -17,6 +17,7 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		System.out.println("ta mere la cafetiere");
 		ParserCup parser = new ParserCup(new Yylex(System.in));
 		try {
 			parser.parse();
@@ -25,5 +26,7 @@ public class Main {
 			System.exit(1);
 		}
 	}
+	
+	
 
 }
