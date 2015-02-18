@@ -5,9 +5,9 @@ public class Evenement {
 
 	public long id_event;
 	
-	public Date date;
+	public long date;
 
-	public Evenement (long id, Date d) {
+	public Evenement (long id, long d) {
 		this.id_event=id;
 		this.date=d;
 	}
@@ -20,11 +20,11 @@ public class Evenement {
 		this.id_event = id_event;
 	}
 
-	public Date getDate() {
+	public long getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(long date) {
 		this.date = date;
 	}
 }
