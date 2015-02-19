@@ -1,13 +1,14 @@
 /*
- * analyseur lexical du langage exemple-expr:
- * (voir support de cours CUP)
+ * analyseur lexical du fichier de log
  *
- * auteur : azim.roussanaly@univ-lorraine.fr
+ * auteur : ersagun.yalcintepe@etu.univ-lorraine.fr
+ * auteur : julien.remy@etu.univ-lorraine.fr
  * (c) 2015
  */
 
 package fr.ul.miage.exemple.generated;
 import java_cup.runtime.Symbol;
+import java.lang.StringBuffer;
 
 %%
 
@@ -17,19 +18,24 @@ import java_cup.runtime.Symbol;
 %cupsym ParserSym
 %cup
 
+
 /* macros */
 SEP     =   [ \t]
+DECAL   =   ("+"|"-")[0-9]+
 NUM     =   [0-9]+
-
+FIN     =   "\n"|"\r\n"
+IP 		=   "([0-9]{1,3}\.){3}[0-9]{1,3}"  
+ACTION  =   "GET*\s[0-9]{3}$"
+TIRET   =   " - - "  
 %%
+
 
 /* regles */
 
-"- -"         { return new Symbol(ParserSym.ADD);}
-"*"         { return new Symbol(ParserSym.MUL);}
-"("         { return new Symbol(ParserSym.PO);}
-")"         { return new Symbol(ParserSym.PF);}
-{NUM}       { return new Symbol(ParserSym.NUM);}
+{IP}   							    { return new Symbol(ParserSym.IP, new 	StringBuffer(yytext()));}
+{TIRET}     						{ return new Symbol(ParserSym.TIRET);}
+{ACTION}         					{ return new Symbol(ParserSym.ACTION);}
+{NUM}       						{ return new Symbol(ParserSym.NUM);}
 
 {SEP}       { ; }
 "\r"		{ return new Symbol(ParserSym.EOF);}

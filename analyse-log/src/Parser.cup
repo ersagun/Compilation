@@ -1,21 +1,21 @@
 /*
- * analyseur syntaxique  du langage exemple-expr:
- * expression arithmetique
- * (voir supports de cours)
+ * analyseur syntaxique du fichier de log
  *
- * auteur : azim.roussanaly@univ-lorraine.fr
- * (c) 2013
+ * auteur : ersagun.yalcintepe@etu.univ-lorraine.fr
+ * auteur : julien.remy@etu.univ-lorraine.fr
+ * (c) 2015
  */ 
 package fr.ul.miage.exemple.generated;
+import java.lang.StringBuffer;
 
 /* la grammaire */
 
-terminal ACTION,TIRET,RC,IP;
+terminal ACTION,TIRET,RC;
 terminal CO, CF, SL, DP;
 terminal JAN, FEV, MAR, AVR, MAI, JUIN, JUIL, AOU, SEP, OCT, NOV, DEC;
 terminal Integer DECAL;
 terminal Integer NUM;
-
+terminal StringBuffer IP;
 
 non terminal  x,liste_e,e;
 non terminal  Integer mois;
@@ -27,8 +27,8 @@ start with x;
 
 x ::= liste_e; 
 liste_e::=e liste_e;
-e::=IP TIRET TIRET timestamp ACTION NUM NUM RC;
-
+e::=IP:ip TIRET timestamp ACTION NUM NUM RC;
+/* --- j'ai mis num num rc ds action mais je dois le modifier du coup --*/
 timestamp	::= CO NUM:j SL mois:m SL NUM:a DP NUM:h DP NUM:mn DP NUM:s DECAL:dcl CF {: RESULT = new Date(a.intValue(),m.intValue(),j.intValue(),h+(dcl/100),mn.intValue(),s.intValue());:}
     		;
               
