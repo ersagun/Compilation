@@ -7,6 +7,27 @@
  */ 
 package fr.ul.miage.exemple.generated;
 import java.lang.StringBuffer;
+parser code { :
+
+public int getResult() {
+return action_obj.s.getNbSession();
+}
+
+public void add(StringBuffer ip, long ts) {
+action_obj.s.add(new Evenement(ip,ts);
+}
+
+: }
+
+action code {: 
+
+public Integer ip;
+
+public long ts;
+
+public Sessions s;
+
+:}
 
 /* la grammaire */
 

@@ -27,4 +27,8 @@ public class Sessions {
 			list.add(new Session(ip,id_session++));
 		}
 	}
+	
+	public int getNbSession () {
+		return list.size();
+	}
 }
