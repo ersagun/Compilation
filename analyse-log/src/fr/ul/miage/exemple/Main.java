@@ -3,6 +3,7 @@
  * La lecture du flux de carractère se fait sur l'entréee standard
  */
 package fr.ul.miage.exemple;
+package fr.ul;
 
 import fr.ul.miage.exemple.generated.ParserCup;
 import fr.ul.miage.exemple.generated.Yylex;
