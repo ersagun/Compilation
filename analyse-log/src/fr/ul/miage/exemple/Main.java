@@ -1,5 +1,5 @@
 /**
- * Classe qui appelle le parser
+ * Classe qui appelle le parser hahahah
  * La lecture du flux de carractère se fait sur l'entréee standard
  */
 package fr.ul.miage.exemple;
