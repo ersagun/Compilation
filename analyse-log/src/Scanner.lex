@@ -30,6 +30,7 @@ NUM     =   [0-9]+
 "("         { return new Symbol(ParserSym.PO);}
 ")"         { return new Symbol(ParserSym.PF);}
 {NUM}       { return new Symbol(ParserSym.NUM);}
+
 {SEP}       { ; }
 "\r"		{ return new Symbol(ParserSym.EOF);}
 
