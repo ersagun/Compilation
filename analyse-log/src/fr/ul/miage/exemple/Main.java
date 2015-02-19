@@ -25,6 +25,7 @@ public class Main {
 		} catch (Exception e) {
 			System.err.println("...Erreur de syntaxe ");
 			System.exit(1);
+			System.exit(1);
 		}
 	}
 	
