@@ -3,7 +3,6 @@
  * La lecture du flux de carractère se fait sur l'entréee standard
  */
 package fr.ul.miage.exemple;
-package fr.ul;
 
 import fr.ul.miage.exemple.generated.ParserCup;
 import fr.ul.miage.exemple.generated.Yylex;
@@ -19,6 +18,9 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		System.out.println("ta mere la cafetiere");
+		File f = new File("exemple.log");
+		  FileInputStream fis = new FileInputStream(F);
+		  ParserCup parser = new ParserCup(new Yylex(fis));
 		ParserCup parser = new ParserCup(new Yylex(System.in));
 		try {
 			parser.parse();
